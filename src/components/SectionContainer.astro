@@ -1,0 +1,8 @@
+---
+import "../styles/global.css"
+const {class: className, id} = Astro.props;
+---
+
+<section id={id} class={`${className} w-full mx-auto lg:w-185 pb-24`}>
+    <slot />
+</section>

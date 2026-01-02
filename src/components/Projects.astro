@@ -1,0 +1,131 @@
+---
+import "../styles/global.css"
+import Flask from "./icons/Flask.astro"
+import Python from "./icons/Python.astro"
+import IA from "./icons/IA.astro"
+import ML from "./icons/ML.astro"
+import DPL from "./icons/DPL.astro"
+import VA from "./icons/VA.astro"
+import Agriculture from "./icons/Agriculture.astro"
+import Health from "./icons/Health.astro"
+import NeuronalNetwork from "./icons/Neuronal-Network.astro"
+import GitHubIcon from "./icons/GitHub.astro"
+import LinkButton from "./LinkButton.astro"
+const TAGS ={
+    Python:{
+        name: 'Python',
+        class: 'bg-[#306998] text-white',
+        icon: Python
+    },
+    IA:{
+        name: 'IA',
+        class: 'bg-[#000000] text-[#FFFFFF]',
+        icon: IA
+    },
+    Flask:{
+        name: 'Flask',
+        class: 'bg-[#000000] text-[#FFFFFF]',
+        icon: Flask
+    },
+    ML:{
+        name: 'Machine Learning',
+        class: 'bg-[#FF6F00] text-[#FFFFFF]',
+        icon: ML
+    },
+    DPL:{
+        name: 'Deep Learning',
+        class: 'bg-[#FF6F00] text-[#FFFFFF]',
+        icon: DPL
+    },
+    VA:{
+        name: 'Visión Artificial',
+        class: 'bg-[#0078D7] text-[#FFFFFF]',
+        icon: VA
+    },
+    Agriculture:{
+        name: 'Agricultura',
+        class: 'bg-[#4CAF50] text-[#FFFFFF]',
+        icon: Agriculture
+    },
+    Health:{
+        name: 'Salud',
+        class: 'bg-[#E91E63] text-[#FFFFFF]',
+        icon: Health
+    },
+    CNN:{
+        name: 'CNN',
+        class: 'bg-[#FF6F00] text-[#FFFFFF]',
+        icon: NeuronalNetwork
+    }
+
+}
+
+const PROJECTS = [
+    {
+        title: 'Sistema de Recomendación Inteligente',
+        description: 'Desarrollo de un sistema de recomendación basado en datos del usuario, implementado con Python y Flask. Incluye lógica de recomendación, backend funcional y una interfaz web interactiva.',
+        github: 'https://github.com/Ggus23/Sistema-Recomendaciones',
+        image: 'projects/Recom-Peli.webp',
+        tags: [ TAGS.Python, TAGS.Flask, TAGS.ML]
+    },
+    {
+        title: 'Detección de Enfermedades en Uvas',
+        description: 'Sistema de visión por computadora para la clasificación de enfermedades en uvas utilizando redes neuronales convolucionales (CNN) y TensorFlow.',
+        github: 'https://github.com/Ggus23/SISTEMA-ANALIZADOR-DE-ENFERMEDADES-HOJAS-DE-UVA',
+        image: 'projects/AN-HO-UVAS.webp',
+        tags: [TAGS.Python, TAGS.Flask, TAGS.CNN, TAGS.VA, TAGS.Agriculture]
+    },
+    {
+        title: 'Predicción de Enfermedades Pulmonares',
+        description: 'Aplicación basada en inteligencia artificial para la detección de enfermedades pulmonares a partir de imágenes médicas, integrada en una app web con Flask.',
+        github: 'https://github.com/Ggus23/IA-Doctor-Pulmon',
+        image: 'projects/AN-PULMONES.webp',
+        tags: [TAGS.Python, TAGS.IA, TAGS.DPL, TAGS.Health]
+    }
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHubIcon class="size-6" />
+              Code
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+ 

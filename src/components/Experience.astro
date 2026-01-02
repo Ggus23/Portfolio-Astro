@@ -1,0 +1,38 @@
+---
+import "../styles/global.css"
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE=[
+   {
+    date: '2022 - Actualidad',
+    title: 'Desarrollador Full Stack & IA',
+    description: 'Desarrollo de aplicaciones web y sistemas inteligentes utilizando tecnologías modernas. Experiencia en backend con Python y Node.js, frontend con React/Next.js y en la implementación de modelos de inteligencia artificial para análisis y predicción de datos.',
+    link: '#'
+},
+{
+    date: '2023 - 2024',
+    title: 'Desarrollador de Sistemas de Inteligencia Artificial',
+    description: 'Diseño e implementación de modelos de aprendizaje automático aplicados a visión por computadora y análisis predictivo. Desarrollo de APIs con Flask para consumo de modelos de IA y despliegue de soluciones funcionales.',
+    link: ''
+},
+{
+    date: '2022 - 2023',
+    title: 'Desarrollador Web Full Stack',
+    description: 'Desarrollo de aplicaciones web completas utilizando HTML, CSS, JavaScript y Python. Implementación de sistemas CRUD, autenticación de usuarios y diseño de interfaces responsivas.',
+    link: ''
+}
+
+
+]
+---
+<ol class="border-s border-white/30">
+    {
+        EXPERIENCE.map(experiencie =>(
+            <li class=" mb-10 ms-6">
+                
+                <ExperienceItem {...experiencie}/>
+            </li>
+        ))
+    }
+</ol>
+

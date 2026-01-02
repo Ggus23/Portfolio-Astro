@@ -1,11 +1,72 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import "../styles/global.css"
+import Badge from '../components/Badge.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCase from "../components/icons/BriefCase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+	title="Porfolio de Agustin - Desarrollador y Programador Web con 3 años de experiencia"
+	description="Hola, soy Agustin Pacar Triveño, un desarrollador web e ingeniero de inteligencia artificial con 3 años de experiencia. Bienvenido a mi portafolio donde comparto mis proyectos y habilidades. Contrateme para llevar tu presencia en línea al siguiente nivel.">
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32">
+			<img
+				class="rounded-full size-12 mb-4" 
+				src="/Foto-Perfil.jpeg" 
+				alt="agustin photo"
+			/>
+			<h1 class="text-white text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Hey, soy Agustin <a 
+				href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7"
+				target="_blank"
+				rel="noopener" 
+				class="flex justify-center items-center">
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-3xl text-wrap max-w-175">
+				<span>3 años de experiencia.</span> 
+				<span class="text-yellow-200/90"> Desarrollador web e Ingeniero de IA.</span> 
+				<span class="text-red-300/90"> De Cochabamba, Bolivia.</span>
+				<span class="opacity-75"> Me especializo en desarrollar webs y 
+				brindo soluciones de inteligencia articial usando ML</span> 
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7">
+					<LinkedInIcon class="size-4 md:size-6"/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/Ggus23">
+					<GithubIcon class="size-4 md:size-6"/>
+					Github
+				</SocialPill>
+				<SocialPill href="mailto:pacaragustin@gmail.com">
+					<MailIcon class="size-4 md:size-6"/>
+					pacaragustin@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<BriefCase class="size-7"/>
+				Experiencia Laboral
+			</h2>
+			<Experience/>
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7"/>
+				Proyectos
+			</h2>
+			<Projects/>
+		</SectionContainer>
+	</main>
 </Layout>
