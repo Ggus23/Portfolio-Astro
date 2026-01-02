@@ -38,14 +38,15 @@ Git & GitHub
 portfolio/
 │
 ├── public/
-│   └── projects/            # Imágenes de proyectos
+│   └── projects/                 # Imágenes de los proyectos
 │
 ├── src/
 │   ├── components/
-│   │   ├── icons/            # Iconos personalizados (Python, Flask, etc.)
+│   │   ├── icons/                # Iconos personalizados (Python, Flask, etc.)
 │   │   └── ProjectCard.astro
 │   │
 │   ├── layouts/
+│   │
 │   ├── pages/
 │   │   └── index.astro
 │   │
@@ -53,7 +54,7 @@ portfolio/
 │   │   └── global.css
 │   │
 │   └── data/
-│       └── projects.js       # Información de proyectos
+│       └── projects.js           # Información de proyectos
 │
 ├── tailwind.config.js
 ├── astro.config.mjs
