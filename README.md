@@ -34,7 +34,9 @@ Vite
 
 Git & GitHub
 
-📁 Estructura del proyecto
+## 📁 Estructura del proyecto
+
+```bash
 portfolio/
 │
 ├── public/
@@ -42,7 +44,7 @@ portfolio/
 │
 ├── src/
 │   ├── components/
-│   │   ├── icons/                # Iconos personalizados (Python, Flask, etc.)
+│   │   ├── icons/                # Iconos personalizados
 │   │   └── ProjectCard.astro
 │   │
 │   ├── layouts/
