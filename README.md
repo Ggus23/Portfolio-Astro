@@ -1,46 +1,82 @@
-# Astro Starter Kit: Basics
+🚀 Portfolio Web – Agustín Pacar
 
-```sh
-npm create astro@latest -- --template basics
-```
+Portfolio profesional desarrollado con Astro + Tailwind CSS, enfocado en mostrar proyectos de Inteligencia Artificial, Backend y Desarrollo Web, con una interfaz moderna, animaciones suaves y componentes reutilizables.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+📌 Características principales
 
-## 🚀 Project Structure
+⚡ Astro como framework principal (ultra rápido)
 
-Inside of your Astro project, you'll see the following folders and files:
+🎨 Tailwind CSS para estilos
 
-```text
-/
+🧠 Proyectos de IA y Machine Learning
+
+🧩 Sistema de tags con iconos dinámicos
+
+✨ Animaciones personalizadas (sin librerías externas)
+
+🌙 Modo oscuro
+
+📱 Diseño totalmente responsive
+
+🧩 Componentes reutilizables
+
+🛠️ Tecnologías utilizadas
+
+Astro
+
+Tailwind CSS
+
+JavaScript / TypeScript
+
+HTML5 / CSS3
+
+Vite
+
+Git & GitHub
+
+## 📁 Estructura del proyecto
+
+```bash
+portfolio/
+│
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+│   └── projects/                 # Imágenes de los proyectos
+│
+├── src/
+│   ├── components/
+│   │   ├── icons/                # Iconos personalizados
+│   │   └── ProjectCard.astro
+│   │
+│   ├── layouts/
+│   │
+│   ├── pages/
+│   │   └── index.astro
+│   │
+│   ├── styles/
+│   │   └── global.css
+│   │
+│   └── data/
+│       └── projects.js           # Información de proyectos
+│
+├── tailwind.config.js
+├── astro.config.mjs
+├── package.json
+└── README.md
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+📦 Instalación y ejecución
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/portfolio.git
 
-## 🧞 Commands
+# Entrar al proyecto
+cd portfolio
 
-All commands are run from the root of the project, from a terminal:
+# Instalar dependencias
+npm install
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+# Ejecutar en desarrollo
+npm run dev
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Luego abre:
+
+http://localhost:4321
