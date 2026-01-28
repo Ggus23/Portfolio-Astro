@@ -1,10 +1,10 @@
 ---
-import "../styles/global.css"
-const personalImageAlt = "Agustín Pacar Triveño"
-import Badge from "../components/Badge.astro"
-import LinkedInIcon from "../components/icons/LinkedIn.astro"
-import MailIcon from "../components/icons/Mail.astro"
-import SocialPill from "../components/SocialPill.astro"
+import "../styles/global.css";
+const personalImageAlt = "Agustín Pacar Triveño";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import WhatsAppIcon from "../components/icons/WhatsApp.astro";
+import SocialPill from "../components/SocialPill.astro";
 ---
 
 <div class="max-w-xl">
@@ -31,16 +31,19 @@ import SocialPill from "../components/SocialPill.astro"
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    3 años de experiencia. <strong
-      >Desarrollador web e Ingeniero de IA.</strong
-    > De Cochabamba, Bolivia. Me especializo en desarrollar webs y brindo soluciones de inteligencia articial usando ML y DL.
+    3 años de experiencia. <strong>Desarrollador web e Ingeniero de IA.</strong> De
+    Cochabamba, Bolivia. Me especializo en desarrollar webs y brindo soluciones de
+    inteligencia articial usando ML y DL.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:pacaragustin@gmail.com">
-      <MailIcon class="size-4" />
+    <SocialPill href="https://wa.me/59179717725">
+      <WhatsAppIcon class="size-4" />
       Contáctame
     </SocialPill>
-    <SocialPill href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7/">
+
+    <SocialPill
+      href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7/"
+    >
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
