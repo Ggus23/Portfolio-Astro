@@ -1,7 +1,7 @@
 ---
-import "../styles/global.css"
-import Badge from '../components/Badge.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
 import SocialPill from "../components/SocialPill.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GithubIcon from "../components/icons/GitHub.astro";
@@ -11,62 +11,126 @@ import SectionContainer from "../components/SectionContainer.astro";
 import BriefCase from "../components/icons/BriefCase.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro";
+import FileIcon from "../components/icons/FileIcon.astro";
 ---
 
-<Layout 
-	title="Porfolio de Agustin - Desarrollador y Programador Web con 3 años de experiencia"
-	description="Hola, soy Agustin Pacar Triveño, un desarrollador web e ingeniero de inteligencia artificial con 3 años de experiencia. Bienvenido a mi portafolio donde comparto mis proyectos y habilidades. Contrateme para llevar tu presencia en línea al siguiente nivel.">
+<Layout
+	title="Agustin Pacar | Desarrollador Full Stack & Ing. de Inteligencia Artificial"
+	description="Portafolio de Agustin Pacar, desarrollador web especialista en full-stack y soluciones de Inteligencia Artificial. 3 años de experiencia creando soluciones innovadoras."
+>
 	<main class="px-4">
-		<SectionContainer class="py-44 pb-32">
-			<img
-				class="rounded-full size-12 mb-4" 
-				src="/Foto-Perfil.jpeg" 
-				alt="agustin photo"
-			/>
-			<h1 class="text-white text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-				Hey, soy Agustin <a 
-				href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7"
-				target="_blank"
-				rel="noopener" 
-				class="flex justify-center items-center">
-					<Badge>Disponible para trabajar</Badge>
-				</a>
-			</h1>
-			<h2 class="text-xl lg:text-3xl text-wrap max-w-175">
-				<span>3 años de experiencia.</span> 
-				<span class="text-yellow-200/90"> Desarrollador web e Ingeniero de IA.</span> 
-				<span class="text-red-300/90"> De Cochabamba, Bolivia.</span>
-				<span class="opacity-75"> Me especializo en desarrollar webs y 
-				brindo soluciones de inteligencia articial usando ML</span> 
-			</h2>
-			<nav class="flex gap-4 mt-8 flex-wrap">
-				<SocialPill href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7">
-					<LinkedInIcon class="size-4 md:size-6"/>
+		<SectionContainer class="py-24 md:py-40">
+			<div class="flex flex-col md:flex-row items-center gap-10 mb-12">
+				<div class="relative group">
+					<!-- Layered background for depth -->
+					<div
+						class="absolute -inset-1.5 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-[2rem] blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"
+					>
+					</div>
+					<div
+						class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-[1.8rem] opacity-10 group-hover:opacity-20 transition duration-1000"
+					>
+					</div>
+					<img
+						class="relative rounded-[1.8rem] size-32 md:size-44 object-cover border-2 border-black/10 dark:border-white/10 shadow-2xl transition-all duration-500 group-hover:scale-[1.02] grayscale-[20%] group-hover:grayscale-0"
+						src="/Foto-Perfil.jpeg"
+						alt="Agustin Pacar"
+					/>
+				</div>
+
+				<div class="flex flex-col items-center md:items-start gap-4">
+					<a
+						href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7"
+						target="_blank"
+						rel="noopener"
+						class="transition transform hover:scale-105 active:scale-95 w-fit"
+					>
+						<Badge>Disponible para trabajar</Badge>
+					</a>
+					<h1
+						class="text-text text-5xl md:text-7xl font-bold tracking-tight"
+					>
+						Hey, soy <span
+							class="text-glow bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient"
+							>Agustin</span
+						>
+					</h1>
+					<p class="text-xl md:text-3xl font-medium text-text-muted">
+						Ingeniero de IA & <span class="text-primary"
+							>Desarrollador Full Stack</span
+						>
+					</p>
+				</div>
+			</div>
+
+			<nav class="flex gap-4 mt-8 flex-wrap items-center">
+				<SocialPill
+					href="https://www.linkedin.com/in/agustin-pacar-trive%C3%B1o-43a40a2a7"
+				>
+					<LinkedInIcon class="size-5" />
 					LinkedIn
 				</SocialPill>
+
 				<SocialPill href="https://github.com/Ggus23">
-					<GithubIcon class="size-4 md:size-6"/>
-					Github
+					<GithubIcon class="size-5" />
+					GitHub
 				</SocialPill>
+
 				<SocialPill href="mailto:pacaragustin@gmail.com">
-					<MailIcon class="size-4 md:size-6"/>
-					pacaragustin@gmail.com
+					<MailIcon class="size-5" />
+					Email
 				</SocialPill>
 			</nav>
 		</SectionContainer>
-		<SectionContainer id="experiencia">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<BriefCase class="size-7"/>
+
+		<SectionContainer id="experiencia" class="pb-32">
+			<h2
+				class="text-2xl md:text-3xl font-bold mb-12 flex gap-x-4 items-center text-text"
+			>
+				<BriefCase class="size-8 text-primary" />
 				Experiencia Laboral
 			</h2>
-			<Experience/>
+			<Experience />
 		</SectionContainer>
-		<SectionContainer id="proyectos">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<CodeIcon class="size-7"/>
-				Proyectos
+
+		<SectionContainer id="proyectos" class="pb-32">
+			<h2
+				class="text-2xl md:text-3xl font-bold mb-12 flex gap-x-4 items-center text-text"
+			>
+				<CodeIcon class="size-8 text-secondary" />
+				Proyectos Destacados
 			</h2>
-			<Projects/>
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi" class="pb-24">
+			<h2
+				class="text-3xl font-bold mb-10 flex gap-x-4 items-center text-text"
+			>
+				<ProfileCheck class="size-8 text-accent" />
+				Sobre mí
+			</h2>
+			<AboutMe />
 		</SectionContainer>
 	</main>
 </Layout>
+
+<style>
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+	.animate-gradient {
+		background-size: 200% 200%;
+		animation: gradient 8s ease infinite;
+	}
+</style>

@@ -1,1 +1,142 @@
 @import "tailwindcss";
+
+@theme {
+  /* Dynamic font mapping */
+  --font-sans: "Outfit Variable", sans-serif;
+
+  /* Dynamic color mapping to CSS variables */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--bg-color);
+  --color-text: var(--text-color);
+  --color-text-muted: var(--text-muted);
+}
+
+:root {
+  /* Light Mode: 'Pure Crystal' - White base as requested, but still clever */
+  --primary: #0ea5e9;
+  /* Sky 600 */
+  --secondary: #6366f1;
+  /* Indigo 600 */
+  --accent: #d946ef;
+  /* Fuchsia 600 */
+  --bg-color: #ffffff;
+  /* Pure white base as requested */
+  --text-color: #0f172a;
+  /* Slate 900 */
+  --text-muted: #475569;
+  /* Slate 600 */
+  --grid-color: rgba(15, 23, 42, 0.05);
+  /* Soft slate grid */
+
+  /* Badge Variables - Light Mode (Professional Green) */
+  --badge-bg: rgba(220, 252, 231, 0.8);
+  /* Green 100 */
+  --badge-text: #166534;
+  /* Green 800 */
+  --badge-border: #86efac;
+  /* Green 300 */
+  --badge-dot: #15803d;
+  /* Green 700 */
+  --badge-dot-ping: #4ade80;
+  /* Green 400 */
+
+
+  /* Elegant Aurora Mesh: High saturation but soft enough for white */
+  --bg-gradient: radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.3) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.3) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(217, 70, 239, 0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(14, 165, 233, 0.2) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0px, transparent 100%);
+}
+
+.dark {
+  /* Dark Mode: 'Midnight Galaxy' - Deep and sophisticated */
+  --primary: #22d3ee;
+  /* Cyan 400 */
+  --secondary: #818cf8;
+  /* Indigo 400 */
+
+  /* Badge Variables - Dark Mode (Green Neon) */
+  --badge-bg: rgba(20, 83, 45, 0.1);
+  /* Green 900 low opacity */
+  --badge-text: #86efac;
+  /* Green 300 */
+  --badge-border: rgba(34, 197, 94, 0.3);
+  /* Green 500 */
+  --badge-dot: #22c55e;
+  /* Green 500 */
+  --badge-dot-ping: #4ade80;
+  /* Green 400 */
+
+
+  --accent: #c084fc;
+  /* Purple 400 */
+  --bg-color: #030014;
+  /* Deepest black-blue */
+  --text-color: #f1f5f9;
+  /* Slate 100 */
+  --text-muted: #94a3b8;
+  /* Slate 400 */
+  --grid-color: rgba(255, 255, 255, 0.05);
+  /* Cyber mesh */
+  --bg-gradient: radial-gradient(circle at 50% -20%, rgba(129, 140, 248, 0.2), transparent),
+    radial-gradient(at 0% 0%, rgba(34, 211, 238, 0.1) 0px, transparent 50%);
+}
+
+@layer base {
+  body {
+    @apply antialiased selection:bg-primary/30 selection:text-primary transition-colors duration-500;
+    /* IMPORTANT: No background-color here. The background is handled by the fixed div in Layout.astro */
+    color: var(--text-color);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
+  }
+
+  .dark .text-glow {
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+  }
+
+  .glass {
+    @apply backdrop-blur-xl border transition-all duration-300;
+    /* Dynamic glass effect based on theme */
+    background-color: var(--glass-bg, rgba(255, 255, 255, 0.02));
+    border-color: var(--glass-border, rgba(255, 255, 255, 0.1));
+  }
+
+  .dark .glass {
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  :root:not(.dark) .glass {
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
+  }
+
+  .glass-hover {
+    @apply hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500;
+  }
+
+  .dark .glass-hover:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  :root:not(.dark) .glass-hover:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.15);
+    @apply shadow-lg shadow-primary/5;
+  }
+
+
+  .bg-grid {
+    background-image: radial-gradient(circle at 1px 1px, var(--grid-color) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+}
