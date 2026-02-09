@@ -10,7 +10,11 @@ import Agriculture from "./icons/Agriculture.astro";
 import Health from "./icons/Health.astro";
 import NeuronalNetwork from "./icons/Neuronal-Network.astro";
 import GitHubIcon from "./icons/GitHub.astro";
+
 import LinkButton from "./LinkButton.astro";
+import Laravel from "./icons/Laravel.astro";
+import Vue from "./icons/Vue.astro";
+import Inertia from "./icons/Inertia.astro";
 const TAGS = {
   Python: {
     name: "Python",
@@ -57,9 +61,32 @@ const TAGS = {
     class: "bg-[#FF6F00] text-[#FFFFFF]",
     icon: NeuronalNetwork,
   },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-[#FF2D20] text-white",
+    icon: Laravel,
+  },
+  VUE: {
+    name: "Vue.js",
+    class: "bg-[#4FC08D] text-white",
+    icon: Vue,
+  },
+  INERTIA: {
+    name: "Inertia.js",
+    class: "bg-[#9553E9] text-white",
+    icon: Inertia,
+  },
 };
 
 const PROJECTS = [
+  {
+    title: "Resto POS - Sistema de Gestión de Restaurantes",
+    description:
+      "Sistema de Punto de Venta (POS) completo para restaurantes. Gestión de roles (Admin, Cajero, Cocina), toma de pedidos en tiempo real, flujo de caja y administración de menú. Desarrollado con Laravel, Vue.js e Inertia.js.",
+    github: "https://github.com/Ggus23/RestoBurguerBichotas",
+    image: "projects/Resto-Burguer.png",
+    tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.INERTIA],
+  },
   {
     title: "Sistema de Recomendación Inteligente",
     description:
@@ -135,12 +162,14 @@ const PROJECTS = [
             {description}
           </p>
 
-          <footer class="flex items-center justify-between mt-auto pt-4 border-t border-black/5 dark:border-white/5">
-            <LinkButton href={github} class="text-xs">
-              <GitHubIcon class="size-4 mr-2" />
-              Source Code
-            </LinkButton>
-          </footer>
+          {github && (
+            <footer class="flex items-center justify-between mt-auto pt-4 border-t border-black/5 dark:border-white/5">
+              <LinkButton href={github} class="text-xs">
+                <GitHubIcon class="size-4 mr-2" />
+                Source Code
+              </LinkButton>
+            </footer>
+          )}
         </div>
       </article>
     ))
